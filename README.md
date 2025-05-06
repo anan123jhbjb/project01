@@ -132,7 +132,15 @@ https://github.com/Frichetten/CVE-2019-5736-PoC
 
 
 10.	cve-2020-8554 中间人攻击
-11.	cve-2020-8559 权限提升
+
+
+
+
+11.	cve-2020-8559 权限提升（疑似需要k8s集群环境）
+
+
+
+
 12.	k8s_backdoor_daemonset 持久化
 
 
