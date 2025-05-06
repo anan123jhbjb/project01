@@ -64,17 +64,23 @@ terraform apply
 
 
 2.启动环境（任意文件上传）
+切换目录
+cd /TerraformGoat/tencentcloud/cos/unrestricted_file_upload/
 
 
+输入密钥和id
+vim terraform.tfvars
+![image](https://github.com/user-attachments/assets/132fb4ff-6286-42ad-b934-bda4c63521ad)
+
+部署运行
+terraform init
+terraform apply
+可以看到链接
+![image](https://github.com/user-attachments/assets/b37b2e12-57f5-4f0f-acb7-018698eb1371)
 
 
-
-
-
-
-
-
-
+访问
+![image](https://github.com/user-attachments/assets/f666b463-6ef1-4849-b3c4-bc098a297a97)
 
 
 
