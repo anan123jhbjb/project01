@@ -36,7 +36,7 @@ SUCCESS -- HOST FILE CHANGED
 
 
 
-2.	cve-2019-13139 命令执行（没有）
+2.	cve-2019-13139 命令执行（不行）
 
 
 
@@ -47,7 +47,7 @@ SUCCESS -- HOST FILE CHANGED
 
 
 
-3.	cve-2019-14271 容器逃逸(没有)
+3.	cve-2019-14271 容器逃逸(不行)
 
 
 
