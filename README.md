@@ -25,19 +25,11 @@ end
 
 一、start.......TerraformGoat安装部署
 root@VM-8-3-ubuntu:~# docker pull registry.cn-hongkong.aliyuncs.com/huoxian_pub/terraformgoat_tencentcloud:0.0.7
-
-
-
-
 root@VM-8-3-ubuntu:~# docker run -itd --name terraformgoat_tencentcloud_0.0.7 registry.cn-hongkong.aliyuncs.com/huoxian_pub/terraformgoat_tencentcloud:0.0.7
-
 root@VM-8-3-ubuntu:~# docker exec -it terraformgoat_tencentcloud_0.0.7 /bin/bash
-
 
 ![image](https://github.com/user-attachments/assets/0cdd859d-f68f-414e-94dd-fcee73a7a302)
 部署完成
-
-
 
 1.启动环境（对象遍历）
 cd /TerraformGoat/tencentcloud/cos/bucket_object_traversal/
@@ -62,11 +54,9 @@ terraform apply
 销毁漏洞环境：
 ![image](https://github.com/user-attachments/assets/c8011a92-a4a5-449b-a1a0-51554f95450f)
 
-
 2.启动环境（任意文件上传）
 切换目录
 cd /TerraformGoat/tencentcloud/cos/unrestricted_file_upload/
-
 
 输入密钥和id
 vim terraform.tfvars
@@ -78,14 +68,11 @@ terraform apply
 可以看到链接
 ![image](https://github.com/user-attachments/assets/b37b2e12-57f5-4f0f-acb7-018698eb1371)
 
-
 访问
 ![image](https://github.com/user-attachments/assets/f666b463-6ef1-4849-b3c4-bc098a297a97)
 
-
 拼接照片名字，发现可以下载
 ![image](https://github.com/user-attachments/assets/87e61964-4d80-4b3e-9a96-6eae2856ae83)
-
 
 现在可以通过PUT方法来覆盖这个文件（在bp中抓包修改方法，重新发包）
 ![image](https://github.com/user-attachments/assets/4a838295-f40d-451c-990f-7f67618c3132)
@@ -98,7 +85,6 @@ terraform apply
 
 3.公开访问
 在容器中执行以下命令
-
 cd /TerraformGoat/tencentcloud/cos/bucket_public_access
 编辑 terraform.tfvars 文件，在文件中填入的tencentcloud_secret_id和tencentcloud_secret_key
 vim terraform.tfvars
@@ -106,7 +92,6 @@ vim terraform.tfvars
 部署靶场
 terraform init
 terraform apply
-
 ![image](https://github.com/user-attachments/assets/067a197d-d137-4f63-9000-88deb8ef4b1a)
 
 ![image](https://github.com/user-attachments/assets/003c9f33-f1cc-481c-828e-f14988671e03)
@@ -116,7 +101,6 @@ terraform apply
 
 销毁
 ![image](https://github.com/user-attachments/assets/9f496548-940a-49a4-a395-dc1bdea47f22)
-
 
 4.ACL可写
 
