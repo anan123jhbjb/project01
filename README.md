@@ -111,12 +111,14 @@ terraform apply
 
 ![image](https://github.com/user-attachments/assets/003c9f33-f1cc-481c-828e-f14988671e03)
 
+浏览器访问即可，公开访问是任意都可以访问
+![image](https://github.com/user-attachments/assets/b6ae6f92-9970-4352-bfc9-1b29fe7fd47b)
+
+销毁
+![image](https://github.com/user-attachments/assets/9f496548-940a-49a4-a395-dc1bdea47f22)
 
 
-
-
-
-
+4.ACL可写
 
 
 
