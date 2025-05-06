@@ -103,6 +103,55 @@ terraform apply
 ![image](https://github.com/user-attachments/assets/9f496548-940a-49a4-a395-dc1bdea47f22)
 
 4.ACL可写
+这是一个用于构建腾讯云 COS Bucket ACL 可写的漏洞环境靶场。使用 Terraform 构建环境后，用户可以通过修改 Bucket 的 ACL 策略将原本无法访问的资源修改为可读，从而访问到 COS 服务资源。
+环境搭建
+在容器中执行以下命令
+cd /TerraformGoat/tencentcloud/cos/bucket_acl_writable/
+编辑 terraform.tfvars 文件，在文件中填入你的tencentcloud_secret_id和tencentcloud_secret_key
+vim terraform.tfvars
+在腾讯云控制台的 API 密钥管理可以创建和查看您的 SecretID 和 SecretKey
+部署靶场
+terraform init
+terraform apply
+
+![image](https://github.com/user-attachments/assets/3cdf6d7d-5504-4284-8570-1f39e3811171)
+
+访问（被拒绝），拼接?acl，发现可以访问
+![image](https://github.com/user-attachments/assets/7a9ece5d-1678-4f43-bdb2-376d5f5a2fc5)
+
+原始：
+<Grant>
+<Grantee xsi:type="Group">
+<URI>http://cam.qcloud.com/groups/global/AllUsers</URI>
+</Grantee>
+<Permission>WRITE_ACP</Permission>
+</Grant>
+<Grant>
+<Grantee xsi:type="Group">
+<URI>http://cam.qcloud.com/groups/global/AllUsers</URI>
+</Grantee>
+<Permission>READ_ACP</Permission>
+</Grant>
+新的
+<Grant>
+  <Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group">
+    <URI>http://cam.qcloud.com/groups/global/AllUsers</URI>
+  </Grantee>
+  <Permission>FULL_CONTROL</Permission>
+</Grant>
+刷新，查看已经添加成功
+![image](https://github.com/user-attachments/assets/633a2795-8cc2-4343-b075-7ad5c0771415)
+
+![image](https://github.com/user-attachments/assets/2ff06ba5-100d-4609-a710-9434a6ff84b0)
+
+摧毁
+![image](https://github.com/user-attachments/assets/ce11f8a5-f03f-4a15-afac-0707860ffe53)
+
+
+
+
+
+
 
 
 
