@@ -93,7 +93,8 @@ terraform apply
 再次访问，发现照片是损坏的，这个就是覆盖成功的效果
 ![image](https://github.com/user-attachments/assets/22a2aee5-df7e-4c23-ab5a-3a4cec9f4113)
 
-
+销毁环境完成
+![image](https://github.com/user-attachments/assets/4da506c6-980b-4bc9-8d43-4f53d1bd1096)
 
 
 
