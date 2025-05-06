@@ -1,15 +1,27 @@
 # project01  漏洞复现                                                                             
 一、start.......安装配置metarget靶场
 1.拉取代码
-root@VM-8-3-ubuntu:~# git clone https://github.com/Metarget/metarget.git
+# root@VM-8-3-ubuntu:~# git clone https://github.com/Metarget/metarget.git
 2.切换目录
-root@VM-8-3-ubuntu:~# cd metarget/
+# root@VM-8-3-ubuntu:~# cd metarget/
 3.安装依赖
 root@VM-8-3-ubuntu:~/metarget# pip3 install -r requirements.txt
 ![image](https://github.com/user-attachments/assets/9ee7780c-38a3-484c-8455-34d2c8c8e46b)
 
 
 
+1.	cve-2018-15664 容器逃逸
+2.	cve-2019-13139 命令执行
+3.	cve-2019-14271 容器逃逸
+4.	cve-2020-15257 容器逃逸
+5.	cve-2019-5736 容器逃逸
+6.	cve-2019-16884 容器逃逸
+7.	cve-2017-1002101 容器逃逸
+8.	cve-2019-11253 拒绝服务
+9.	cve-2019-9946 流量劫持
+10.	cve-2020-8554 中间人攻击
+11.	cve-2020-8559 权限提升
+12.	k8s_backdoor_daemonset 持久化
 
 
 
