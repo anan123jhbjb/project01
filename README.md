@@ -47,7 +47,6 @@ cd /TerraformGoat/tencentcloud/cos/bucket_object_traversal/
 输入命令：terraform init
 terraform apply
 
-
 ![image](https://github.com/user-attachments/assets/c5451360-c506-44b3-baa3-058a2be911a7)
 
 看到地址
@@ -60,6 +59,47 @@ terraform apply
 ![image](https://github.com/user-attachments/assets/969cb15f-26c5-4a00-a53f-b8caa7e158d5)
 
 到此存储桶对象遍历漏洞复现完成
+销毁漏洞环境：
+![image](https://github.com/user-attachments/assets/c8011a92-a4a5-449b-a1a0-51554f95450f)
+
+
+2.启动环境（任意文件上传）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
