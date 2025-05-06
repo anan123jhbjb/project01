@@ -2,7 +2,7 @@
 
 
 
-start.......安装配置metarget靶场
+一、start.......安装配置metarget靶场
 1.拉取代码
 root@VM-8-3-ubuntu:~# git clone https://github.com/Metarget/metarget.git
 
@@ -23,7 +23,7 @@ root@VM-8-3-ubuntu:~/metarget# pip3 install -r requirements.txt
 end
 
 
-start.......TerraformGoat安装部署
+一、start.......TerraformGoat安装部署
 root@VM-8-3-ubuntu:~# docker pull registry.cn-hongkong.aliyuncs.com/huoxian_pub/terraformgoat_tencentcloud:0.0.7
 
 
