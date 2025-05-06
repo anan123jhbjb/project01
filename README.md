@@ -10,7 +10,32 @@ root@VM-8-3-ubuntu:~/metarget# pip3 install -r requirements.txt
 
 
 
-1.	cve-2018-15664 容器逃逸
+## 1.	cve-2018-15664 容器逃逸
+安装启动环境，查看版本
+![image](https://github.com/user-attachments/assets/a224b3ec-36d2-40e3-b335-029301b82bee)
+在这里找对应的POC，去做实验https://github.com/Metarget/cloud-native-security-book/tree/main
+把poc放进metarget文件夹中，给两个执行文件（xx.sh为后缀）加上执行权限。如：chmod +x xxx.sh
+![image](https://github.com/user-attachments/assets/973ded8d-b117-4464-a4fe-e9e978b4a96f)
+
+![image](https://github.com/user-attachments/assets/9e5ec75d-bc5c-41bb-bbd2-c0411e270b83)
+
+通过：执行命令
+root@VM-8-3-ubuntu:~/metarget# ./run_write.sh 
+FAILED -- HOST FILE UNCHANGED
+Sending build context to Docker daemon  7.168kB
+Step 1/11 : FROM opensuse/leap
+Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+Unable to find image 'cyphar/symlink_swap:latest' locally
+docker: Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers).
+See 'docker run --help'.
+SUCCESS -- HOST FILE CHANGED
+即可触发漏洞，完成复现
+
+
+
+
+
+
 2.	cve-2019-13139 命令执行
 3.	cve-2019-14271 容器逃逸
 4.	cve-2020-15257 容器逃逸
