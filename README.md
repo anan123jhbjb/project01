@@ -1,7 +1,4 @@
 # project01  漏洞复现                                                                             
-
-
-
 一、start.......安装配置metarget靶场
 1.拉取代码
 root@VM-8-3-ubuntu:~# git clone https://github.com/Metarget/metarget.git
@@ -14,16 +11,10 @@ root@VM-8-3-ubuntu:~/metarget# pip3 install -r requirements.txt
 
 ![image](https://github.com/user-attachments/assets/9ee7780c-38a3-484c-8455-34d2c8c8e46b)
 
-
-
-
-
-
-
 end
 
 
-一、start.......TerraformGoat安装部署
+二、start.......TerraformGoat安装部署
 root@VM-8-3-ubuntu:~# docker pull registry.cn-hongkong.aliyuncs.com/huoxian_pub/terraformgoat_tencentcloud:0.0.7
 root@VM-8-3-ubuntu:~# docker run -itd --name terraformgoat_tencentcloud_0.0.7 registry.cn-hongkong.aliyuncs.com/huoxian_pub/terraformgoat_tencentcloud:0.0.7
 root@VM-8-3-ubuntu:~# docker exec -it terraformgoat_tencentcloud_0.0.7 /bin/bash
@@ -148,14 +139,29 @@ terraform apply
 ![image](https://github.com/user-attachments/assets/ce11f8a5-f03f-4a15-afac-0707860ffe53)
 
 
+5.服务端加密未开启
+这是一个用于构建腾讯云 COS Bucket 服务端加密未开启的场景。
 
+场景搭建
+在容器中执行以下命令
 
+cd /TerraformGoat/tencentcloud/cos/server_side_encryption_disable
+编辑 terraform.tfvars 文件，在文件中填入你的tencentcloud_secret_id和tencentcloud_secret_key
 
+vim terraform.tfvars
+在腾讯云控制台的 API 密钥管理可以创建和查看您的 SecretID 和 SecretKey
 
+部署靶场
 
+terraform init
+![image](https://github.com/user-attachments/assets/402fa18c-0e3f-4914-8377-77c9e40c6b0d)
 
+terraform apply
+![image](https://github.com/user-attachments/assets/8e7fb71f-f953-4eb3-93d9-12ea27bb4a76)
 
+打开，查看是未加密（照片）
 
+销毁（照片）
 
 
 
