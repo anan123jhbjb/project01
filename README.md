@@ -24,6 +24,12 @@ root@VM-8-3-ubuntu:~/metarget# pip3 install -r requirements.txt
 
 
 
+end
+
+
+start.......TerraformGoat安装部署
+
+
 
 
 
