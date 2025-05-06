@@ -59,6 +59,7 @@ terraform apply
 添加key访问（可以看到已经有对应的对象被访问/下载）
 ![image](https://github.com/user-attachments/assets/969cb15f-26c5-4a00-a53f-b8caa7e158d5)
 
+到此存储桶对象遍历漏洞复现完成
 
 
 
