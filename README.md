@@ -165,9 +165,7 @@ terraform apply
 销毁（照片）
 ![image](https://github.com/user-attachments/assets/ea222537-a88c-42fb-bf4c-7ea3df2e7913)
 
-6.CVM SSRF
-
-
+6.CVM SSRF  （x）
 
 
 
