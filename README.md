@@ -83,10 +83,15 @@ terraform apply
 ![image](https://github.com/user-attachments/assets/f666b463-6ef1-4849-b3c4-bc098a297a97)
 
 
+拼接照片名字，发现可以下载
+![image](https://github.com/user-attachments/assets/87e61964-4d80-4b3e-9a96-6eae2856ae83)
 
 
+现在可以通过PUT方法来覆盖这个文件（在bp中抓包修改方法，重新发包）
+![image](https://github.com/user-attachments/assets/4a838295-f40d-451c-990f-7f67618c3132)
 
-
+再次访问，发现照片是损坏的，这个就是覆盖成功的效果
+![image](https://github.com/user-attachments/assets/22a2aee5-df7e-4c23-ab5a-3a4cec9f4113)
 
 
 
