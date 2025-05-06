@@ -160,8 +160,18 @@ terraform apply
 ![image](https://github.com/user-attachments/assets/8e7fb71f-f953-4eb3-93d9-12ea27bb4a76)
 
 打开，查看是未加密（照片）
+![85eff7ba0ef95d7ad49f5340aaa7d32](https://github.com/user-attachments/assets/224b5bd8-6515-4178-b2c0-a1f145d51827)
 
 销毁（照片）
+![image](https://github.com/user-attachments/assets/ea222537-a88c-42fb-bf4c-7ea3df2e7913)
+
+6.CVM SSRF
+
+
+
+
+
+
 
 
 
