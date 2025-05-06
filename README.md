@@ -96,10 +96,20 @@ terraform apply
 销毁环境完成
 ![image](https://github.com/user-attachments/assets/4da506c6-980b-4bc9-8d43-4f53d1bd1096)
 
+3.公开访问
+在容器中执行以下命令
 
+cd /TerraformGoat/tencentcloud/cos/bucket_public_access
+编辑 terraform.tfvars 文件，在文件中填入的tencentcloud_secret_id和tencentcloud_secret_key
+vim terraform.tfvars
+在腾讯云控制台的 API 密钥管理可以创建和查看您的 SecretID 和 SecretKey
+部署靶场
+terraform init
+terraform apply
 
+![image](https://github.com/user-attachments/assets/067a197d-d137-4f63-9000-88deb8ef4b1a)
 
-
+![image](https://github.com/user-attachments/assets/003c9f33-f1cc-481c-828e-f14988671e03)
 
 
 
