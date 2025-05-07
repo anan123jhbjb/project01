@@ -134,12 +134,15 @@ https://github.com/Frichetten/CVE-2019-5736-PoC
 
 
 
-11.	cve-2020-8559 权限提升（疑似需要k8s集群环境）
+11.	cve-2020-8559 权限提升（疑似需要k8s集群环境，但安装是不行的）
+root@VM-8-3-ubuntu:~/metarget# ./metarget cnv install cve-2020-8559 --domestic --verbose
+![image](https://github.com/user-attachments/assets/4e5fa0a0-f7e6-4213-836b-6569c8f06502)
+不行，解决不了，安装k8s的时候完蛋了
 
 
 
 
-12.	k8s_backdoor_daemonset 持久化
+12.	k8s_backdoor_daemonset 持久化（不行，没得）
 
 
 
